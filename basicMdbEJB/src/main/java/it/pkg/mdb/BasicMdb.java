@@ -67,4 +67,8 @@ public class BasicMdb implements MessageListener{
       logger.info( msjTx + Constantes.SEPARADOR_GUIONES );
     }
   }
+
+  public Integer getMessage(){
+    return 2;
+  }
 }
