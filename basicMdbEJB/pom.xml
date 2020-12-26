@@ -98,7 +98,6 @@
             <version>2.6</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Shared library eai-utils -->
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc14</artifactId>

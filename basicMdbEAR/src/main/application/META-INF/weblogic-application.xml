@@ -5,14 +5,4 @@
         <wls:param-name>webapp.encoding.default</wls:param-name>
         <wls:param-value>UTF-8</wls:param-value>
     </wls:application-param>
-    <wls:library-ref>
-        <wls:library-name>util-eai-1.0</wls:library-name>
-        <wls:specification-version>0.1-SNAPSHOT</wls:specification-version>
-        <wls:exact-match>true</wls:exact-match>
-    </wls:library-ref>
-    <wls:library-ref>
-        <wls:library-name>spring-3.1</wls:library-name>
-        <wls:specification-version>3.1.0</wls:specification-version>
-        <wls:exact-match>true</wls:exact-match>
-    </wls:library-ref>
 </wls:weblogic-application>

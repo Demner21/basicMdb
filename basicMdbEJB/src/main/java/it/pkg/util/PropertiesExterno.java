@@ -1,7 +1,7 @@
 package it.pkg.util;
 
 import java.io.Serializable;
-import java.math.BigInteger;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -9,13 +9,13 @@ import org.springframework.stereotype.Component;
 public class PropertiesExterno implements Serializable{
   
   private static final long serialVersionUID = 1L;
-  @Value( "${db.dmneru.jndi}" )
+  @Value( "${db.dmnru.jndi}" )
   public String             demneruJndi;
-  @Value( "${db.dmneru.timeoutConexion}" )
+  @Value( "${db.dmnru.timeoutConexion}" )
   public Integer            dmneruTimeOutConexion;
-  @Value( "${db.dmneru.timeoutejecucion}" )
+  @Value( "${db.dmnru.timeoutejecucion}" )
   public Integer            demneruTimeOutEjecucion;
-  @Value( "${db.dmneru.owner}" )
+  @Value( "${db.dmnru.owner}" )
   public String             dmneruOwner;
   @Value( "${db.dmnru.sp.test}" )
   public String             spNameComplete;
