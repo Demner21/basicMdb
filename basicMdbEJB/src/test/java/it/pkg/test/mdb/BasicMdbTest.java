@@ -1,53 +1,42 @@
 package it.pkg.test.mdb;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGenerator;
-import org.junit.jupiter.api.IndicativeSentencesGeneration;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import it.pkg.mdb.BasicMdb;
 import it.pkg.test.conf.BasicMdbTestConfig;
 import it.pkg.util.PropertiesExterno;
 
-@ExtendWith(SpringExtension.class) 
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = BasicMdbTestConfig.class)
-@IndicativeSentencesGeneration(separator = " -> ", generator = DisplayNameGenerator.ReplaceUnderscores.class)
-class BasicMdbTest{
+public class BasicMdbTest{
   
   static BasicMdb mdb;
  
   @Autowired
   PropertiesExterno propertiesExterno;
   
-  @BeforeAll
-  static void cargarMdb() {
+  @Before
+  public void cargarMdb() {
 	  mdb= new BasicMdb();
   }
   
   @Test
-  @DisplayName("Simple test")
-  void test(){
-    assertEquals(2, mdb.getMessage(), "1 + 1 should equal 2");
+  public void test(){
+    assertEquals("2", mdb.getMessage().toString());
     
   }
   
   @Test
-  @DisplayName("😱")
-  void testProperties(){
-    assertEquals("pe.dmner.jndi", propertiesExterno.demneruJndi, "propertiesExterno.demneruJndi should equal pe.dmner.jndi");
+  public void testProperties(){
+    assertEquals("pe.dmner.jndi", propertiesExterno.demneruJndi);
     
-  }
-  
-  @ParameterizedTest(name = "Year {0} is a leap year.")
-  @ValueSource(ints = { 2016, 2020, 2048 })
-  void if_it_is_one_of_the_following_years(int year) {
-    assertEquals( 0, year%2);
   }
 
 }
