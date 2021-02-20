@@ -34,14 +34,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
-                <version>2.6</version>
+                <version>3.2.0</version>
                 <configuration>
-                    <version>1.4</version>
+                    <!--la configuracion de version es para la version del descriptor application.xml  -->
+                    <version>8</version>
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
                         <ejbModule>
                             <groupId>archetype.it</groupId>
                             <artifactId>basicMdbEJB</artifactId>
+                            <type>ejb</type>
+                            <bundleFileName>dmner-basicMdbEJB</bundleFileName>
                         </ejbModule>
                     </modules>
                 </configuration>
