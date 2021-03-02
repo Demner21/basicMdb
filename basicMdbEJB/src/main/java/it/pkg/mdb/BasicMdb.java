@@ -18,9 +18,16 @@ import it.pkg.util.SpringBeanInterceptors;
 @Interceptors( SpringBeanInterceptors.class )
 public class BasicMdb implements MessageListener{
   
-  private static Logger   logger = Logger.getLogger( BasicMdb.class );
+  private static final Logger   logger = Logger.getLogger( BasicMdb.class );
+  
   
   @Autowired
+  public BasicMdb(BasicMdbService service) {
+    super();
+    this.service = service;
+  }
+
+  
   private BasicMdbService service;
   
   public void onMessage( Message message ){

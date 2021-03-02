@@ -12,9 +12,5 @@
                            http://www.springframework.org/schema/jee/spring-jee-3.1.xsd">
 
     <bean id="propertiesExterno" class="it.pkg.util.PropertiesExterno" />
-    <bean id="eaiDao" class="it.pkg.dao.TimEaiDBImpl" />
-    
-    <bean id="conChangeBillCycleClient" class="it.pkg.proxy.ConChangeBillCycleClientImpl" />
-    
-	<bean id="service" class="it.pkg.service.basicMdbServiceImpl" />
+    <bean id="databaseBean" class="it.pkg.dao.DatabaseRepositoryImpl" />
 </beans>
