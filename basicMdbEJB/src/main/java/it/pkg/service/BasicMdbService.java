@@ -6,5 +6,5 @@ import it.pkg.bean.DataMessageObject;
 
 public interface BasicMdbService {
 
-  void iniciarService(DataMessageObject datosProgramarCambioCiclo, TextMessage textMessage, String messageID);
+  String iniciarService(DataMessageObject datosProgramarCambioCiclo, String messageID);
 }

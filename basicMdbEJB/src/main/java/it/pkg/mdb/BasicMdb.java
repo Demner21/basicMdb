@@ -61,7 +61,7 @@ public class BasicMdb implements MessageListener{
       
       
       mensaje = "[txId=" + dataMessage.getIdTransaccion() + "]";
-      service.iniciarService( dataMessage, textMessage, mensaje );
+      service.iniciarService( dataMessage, mensaje );
     }
     catch( Exception e ){
       logger.error( msjTx + "Error: " + e.getMessage(), e );

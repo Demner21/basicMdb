@@ -3,19 +3,21 @@ package it.pkg.dao;
 import static oracle.jdbc.OracleTypes.CLOB;
 import static oracle.jdbc.OracleTypes.DATE;
 import static oracle.jdbc.OracleTypes.VARCHAR;
-import java.sql.SQLTimeoutException;
+
 import java.util.Map;
+
 import javax.sql.DataSource;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.core.NestedRuntimeException;
 import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
+
 import it.pkg.bean.RequestRegistrarTransaccionBean;
 import it.pkg.bean.ResponseRegistrarTransaccionBean;
 import it.pkg.exception.DBException;
