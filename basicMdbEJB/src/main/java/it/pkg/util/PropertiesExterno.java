@@ -21,4 +21,6 @@ public class PropertiesExterno implements Serializable{
   public String             spNameComplete;
   @Value( "${respuesta.codigo.exito}" )
   public String             respuestaCodigoExito;
+  @Value( "${respuesta.codigo.error}" )
+  public String             respuestaCodigoError;
 }

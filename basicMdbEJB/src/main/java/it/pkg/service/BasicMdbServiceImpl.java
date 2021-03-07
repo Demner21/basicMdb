@@ -8,7 +8,6 @@ import it.pkg.bean.DataMessageObject;
 import it.pkg.bean.RequestRegistrarTransaccionBean;
 import it.pkg.bean.ResponseRegistrarTransaccionBean;
 import it.pkg.dao.DatabaseRepository;
-import it.pkg.util.Constantes;
 import it.pkg.util.PropertiesExterno;
 
 @Service
@@ -34,9 +33,9 @@ public class BasicMdbServiceImpl implements BasicMdbService {
       RequestRegistrarTransaccionBean request = new RequestRegistrarTransaccionBean();
 
       registrarTransaccion = databaseRepository.registrarTransaccion(trazabilidad, request);
-
-      logger.info(String.format("%s se ha obtenido codigo de respuesta %s", trazabilidad,
-          registrarTransaccion.getCodigoError()));
+      
+        logger.info(String.format("%s se ha obtenido codigo de respuesta %s", trazabilidad,
+            registrarTransaccion !=null ? registrarTransaccion.getCodigoError() :propertiesExterno.respuestaCodigoError));
 
     } catch (Exception ex) {
       logger.error(trazabilidad, ex);
@@ -44,7 +43,7 @@ public class BasicMdbServiceImpl implements BasicMdbService {
       logger.info(trazabilidad + "Tiempo Transacurrido (ms): [" + (System.currentTimeMillis() - tiempoInicio) + "]");
       logger.info(trazabilidad + "[FIN] - METODO:MESSAGE");
     }
-    return registrarTransaccion != null ? registrarTransaccion.getCodigoError() : Constantes.VACIO;
+    return registrarTransaccion != null ? registrarTransaccion.getCodigoError() : propertiesExterno.respuestaCodigoError;
   }
 
 }
